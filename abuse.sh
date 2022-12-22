@@ -1,8 +1,7 @@
 file=$(cat proxy.txt)
-
+i=25
 for line in $file
 do
-i=21
 nibid keys add wallet$i --keyring-backend test
 wallet_now=$(nibid keys show wallet$i --keyring-backend test -a)
 
