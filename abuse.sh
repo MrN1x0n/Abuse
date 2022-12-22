@@ -1,5 +1,5 @@
 file=$(cat proxy.txt)
-i=25
+i=30
 for line in $file
 do
 nibid keys add wallet$i --keyring-backend test
@@ -9,5 +9,5 @@ curl --proxy $line -X POST -d '{"address": "$wallet_now", "coins": ["10000000000
 echo $wallet_now >> $HOME/wallets.txt
 sleep 1
 nibid tx bank send $wallet_now $my_wallet 109990000unibi --keyring-backend test  --chain-id $NIBIRU_CHAIN_ID --fees 6000unibi -y
-i=i+1
+let "i=i+1"
 done
