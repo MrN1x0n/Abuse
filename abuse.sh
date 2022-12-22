@@ -4,7 +4,8 @@ for line in $file
 do
 nibid keys add wallet$i --keyring-backend test
 wallet_now=$(nibid keys show wallet$i --keyring-backend test -a)
-
+sleep 1
+echo "Запрашиваем токены"
 curl --proxy $line -X POST -d '{"address": "'"$wallet_now"'", "coins": ["110000000unibi","100000000000unusd"]}' "https://faucet.testnet-2.nibiru.fi/"
 echo $wallet_now >> $HOME/wallets.txt
 sleep 1
