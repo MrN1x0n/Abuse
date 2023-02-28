@@ -1,6 +1,10 @@
+#!/bin/bash
 file=$(cat proxy.list)
 i=1
-my_wallet=nibi1626akppluz03e29rsdsgw4ugguwmgzllsxl3zw
+
+echo "Enter wallet address where to gather tokens:"
+read my_wallet
+
 for line in $file
 do
 nibid keys add temp_wallet$i --keyring-backend test
