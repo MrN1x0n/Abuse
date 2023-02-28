@@ -1,6 +1,6 @@
-file=$(cat proxy.list)
+file=$(cat proxy2.list)
 i=1
-my_wallet=nibi1626akppluz03e29rsdsgw4ugguwmgzllsxl3zw
+my_wallet=nibi1z24dtqh9lms7k6f9kkm5knyxuwkjstuut6rkkx
 for line in $file
 	do
 		nibid keys add temp_wallet$i --keyring-backend test
